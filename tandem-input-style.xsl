@@ -35,15 +35,36 @@ All Rights Reserved
 	<xsl:when test="contains(@type,'input')">
 	<xsl:variable name="str_label" select="@label" />
 	<xsl:variable name="str_value" select="text()" />
+		<xsl:choose>
+		<xsl:when test="contains(@subt,'yes-no')">
+		<TR>
+			<TD VALIGN="TOP" ALIGN="RIGHT"><I><xsl:value-of select="@label" /></I></TD>
+			<td>
+				<input type="radio" name="{$str_label}" value="yes" >
+				<xsl:attribute name="checked">checked</xsl:attribute>
+				</input>Yes
+				<input type="radio" name="{$str_label}" value="no" >
+				</input>No
+			</td>
+		</TR>
+		</xsl:when>
+		<xsl:otherwise>
+		<TR>
+		<TD VALIGN="TOP" ALIGN="RIGHT"><I><xsl:value-of select="@label" /></I></TD>
+		<TD><input type="text" name="{$str_label}" value="{$str_value}"></input></TD>
+	</TR>
+	</xsl:otherwise>
+		</xsl:choose>
+	
+<!--
 	<TR>
 		<TD VALIGN="TOP" ALIGN="RIGHT"><I><xsl:value-of select="@label" /></I></TD>
-<!--
-		<TD WIDTH="350" VALIGN="TOP" ALIGN="LEFT"><B><xsl:value-of select="text()" /></B></TD>
--->
 		<TD><input type="text" name="{$str_label}" value="{$str_value}"></input></TD>
-		
 	</TR>
+-->
+	
 	</xsl:when>
+	
 	<xsl:when test="contains(@type,'section')">
 	<tr><td colspan="2"><B><U><xsl:value-of select="text()"/></U></B></td></tr>
 	</xsl:when>

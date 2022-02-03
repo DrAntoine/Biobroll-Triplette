@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="tandem-input-style.xsl"?>
 <bioml>
-<note>list path parameters</note>
+<note type="section">list path parameters</note>
 	<note type="input" label="list path, default parameters">default_input.xml</note>
 		<note>This value is ignored when it is present in the default parameter
 		list path.</note>
@@ -11,7 +11,7 @@
 	<note type="input" label="spectrum, fragment monoisotopic mass error">0.4</note>
 	<note type="input" label="spectrum, parent monoisotopic mass error plus">100</note>
 	<note type="input" label="spectrum, parent monoisotopic mass error minus">100</note>
-	<note type="input" label="spectrum, parent monoisotopic mass isotope error">yes</note>
+	<note subt="yes-no" type="input" label="spectrum, parent monoisotopic mass isotope error">yes</note>
 	<note type="input" label="spectrum, fragment monoisotopic mass error units">Daltons</note>
 	<note>The value for this parameter may be 'Daltons' or 'ppm': all other values are ignored</note>
 	<note type="input" label="spectrum, parent monoisotopic mass error units">ppm</note>
